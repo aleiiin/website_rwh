@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-image: url('/src/assets/paper-bg.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --primary: 226 40% 28%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 227 50% 31%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 230 20% 82%;
+    --accent-foreground: 224 40% 25%;
+    
+    --background: 0 0% 98%;
+    --foreground: 224 15% 20%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 15% 20%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 15% 20%;
+    
+    --muted: 230 20% 92%;
+    --muted-foreground: 224 10% 50%;
+    
+    --border: 230 20% 82%;
+    --input: 230 15% 82%;
+    
+    --ring: 226 40% 28%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .section-bg {
+    @apply bg-white bg-opacity-95 rounded-lg shadow-md;
+  }
+  
+  .section-title {
+    @apply font-serif font-bold text-3xl md:text-4xl text-primary mb-3 text-center;
+  }
+  
+  .section-divider {
+    @apply w-24 h-1 bg-secondary mx-auto mb-4;
+  }
+  
+  .nav-link {
+    @apply text-primary hover:text-secondary transition px-1 py-2;
+  }
+  
+  .nav-link.active {
+    @apply border-b-2 border-primary;
+  }
+}
