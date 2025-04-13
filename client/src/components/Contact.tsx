@@ -24,21 +24,13 @@ import {
 } from "react-icons/fa";
 
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Имя должно содержать не менее 2 символов",
-  }),
-  email: z.string().email({
-    message: "Пожалуйста, введите корректный email",
-  }),
-  phone: z.string().min(6, {
-    message: "Пожалуйста, введите корректный номер телефона",
-  }),
-  message: z.string().min(10, {
-    message: "Сообщение должно содержать не менее 10 символов",
-  }),
-  agreement: z.literal(true, {
-    errorMap: () => ({ message: "Вы должны принять соглашение" }),
-  }),
+  name: z.string().min(2, "Имя должно содержать минимум 2 символа"),
+  email: z.string().email("Введите корректный email"),
+  phone: z.string().min(10, "Введите корректный номер телефона"),
+  message: z.string().min(10, "Сообщение должно содержать минимум 10 символов"),
+  agreement: z.boolean().refine((val) => val === true, {
+    message: "Необходимо согласие с условиями"
+  })
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -254,8 +246,9 @@ export default function Contact() {
                     <Button
                       type="submit"
                       className="w-full bg-primary hover:bg-secondary text-white transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                      disabled={isSubmitting}
                     >
-                      Отправить сообщение
+                      {isSubmitting ? "Отправка..." : "Отправить сообщение"}
                     </Button>
                   </form>
                 </Form>

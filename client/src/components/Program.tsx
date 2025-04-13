@@ -28,11 +28,7 @@ function ProgramItem({ icon, title, items }: ProgramItemProps) {
   );
 }
 
-interface ProgramProps {
-  scrollToSection: (id: string) => void;
-}
-
-export default function Program({ scrollToSection }: ProgramProps) {
+export default function Program() {
   const programItems = [
     {
       icon: <TrafficCone className="w-10 h-10" />,

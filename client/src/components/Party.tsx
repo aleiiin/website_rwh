@@ -1,5 +1,4 @@
 import { CheckCircle, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export default function Party() {
   return (
@@ -70,16 +69,15 @@ export default function Party() {
               </div>
               
               <div className="flex">
-                <Button
-                  as="a"
+                <a
                   href="https://er.ru/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-primary hover:bg-secondary text-white flex items-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium bg-primary hover:bg-secondary text-white transform transition-all duration-300 hover:scale-105 hover:shadow-lg h-10 px-4 py-2"
                 >
                   Официальный сайт партии
                   <ExternalLink className="ml-2 h-4 w-4" />
-                </Button>
+                </a>
               </div>
             </div>
           </div>
