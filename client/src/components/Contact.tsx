@@ -28,9 +28,10 @@ const formSchema = z.object({
   email: z.string().email("Введите корректный email"),
   phone: z.string().min(10, "Введите корректный номер телефона"),
   message: z.string().min(10, "Сообщение должно содержать минимум 10 символов"),
-  agreement: z.boolean().refine((val) => val === true, {
-    message: "Необходимо согласие с условиями"
-  })
+  agreement: z.boolean()
+}).refine((data) => data.agreement === true, {
+  message: "Необходимо согласие с условиями",
+  path: ["agreement"]
 });
 
 type FormValues = z.infer<typeof formSchema>;
