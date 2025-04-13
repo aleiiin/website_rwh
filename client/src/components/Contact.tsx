@@ -149,16 +149,16 @@ export default function Contact() {
                 <div className="mt-8">
                   <h4 className="font-bold text-gray-800 mb-3">Социальные сети</h4>
                   <div className="flex space-x-4">
-                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transition">
+                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transform transition-all duration-300 hover:scale-110 hover:shadow-lg">
                       <FaVk className="h-5 w-5" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transition">
+                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transform transition-all duration-300 hover:scale-110 hover:shadow-lg">
                       <FaTelegram className="h-5 w-5" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transition">
+                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transform transition-all duration-300 hover:scale-110 hover:shadow-lg">
                       <FaYoutube className="h-5 w-5" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transition">
+                    <a href="#" className="w-10 h-10 bg-primary hover:bg-secondary rounded-full flex items-center justify-center text-white transform transition-all duration-300 hover:scale-110 hover:shadow-lg">
                       <FaOdnoklassniki className="h-5 w-5" />
                     </a>
                   </div>
@@ -251,12 +251,11 @@ export default function Contact() {
                       )}
                     />
                     
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-primary hover:bg-secondary text-white"
-                      disabled={isSubmitting}
+                    <Button
+                      type="submit"
+                      className="w-full bg-primary hover:bg-secondary text-white transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
                     >
-                      {isSubmitting ? "Отправка..." : "Отправить сообщение"}
+                      Отправить сообщение
                     </Button>
                   </form>
                 </Form>

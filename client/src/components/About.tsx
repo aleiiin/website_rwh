@@ -13,61 +13,29 @@ export default function About() {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-2/5 mb-8 md:mb-0">
               <img 
-                src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=800&auto=format&fit=crop&q=80" 
-                alt="Иванов в рабочей обстановке" 
+                src="/images/photo_2024-06-17_20-53-41.jpg" 
+                alt="Кандидат в рабочей обстановке" 
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
             
             <div className="md:w-3/5 md:pl-12">
-              <h3 className="font-serif font-bold text-2xl text-secondary mb-4">
-                Опыт и достижения
-              </h3>
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-primary mr-2 mt-1">
-                    <CheckCircle size={18} />
-                  </span>
-                  <span>Более 15 лет опыта работы в сфере муниципального управления</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2 mt-1">
-                    <CheckCircle size={18} />
-                  </span>
-                  <span>Руководитель проекта по благоустройству парковых зон в Томске</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2 mt-1">
-                    <CheckCircle size={18} />
-                  </span>
-                  <span>Организатор общественных инициатив по защите экологии региона</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary mr-2 mt-1">
-                    <CheckCircle size={18} />
-                  </span>
-                  <span>Эксперт в области городского планирования и развития инфраструктуры</span>
-                </li>
-              </ul>
-              
-              <h3 className="font-serif font-bold text-2xl text-secondary mt-8 mb-4">
-                Образование
-              </h3>
-              <p className="text-gray-700 mb-2">
-                Томский государственный университет, факультет государственного управления
-              </p>
-              <p className="text-gray-700 mb-6">
-                Московская школа управления, программа "Эффективное управление городской средой"
-              </p>
-              
-              <div className="mt-6">
-                <a 
-                  href="#program" 
-                  className="text-primary hover:text-secondary transition font-medium inline-flex items-center"
-                >
-                  Ознакомиться с программой 
-                  <span className="ml-1">→</span>
-                </a>
+              <div className="space-y-6 text-gray-700">
+                <p className="font-sans text-lg md:text-xl leading-relaxed">
+                  Я родилась 24 декабря 1968 года в Томске —городе с богатой историей и сибирским характером. Сначала окончила аграрный колледж, а в 2010 году получила высшее образование по специальности инженер-механик сельскохозяйственной техники.
+                </p>
+                <p className="font-sans text-lg md:text-xl leading-relaxed">
+                  Первые профессиональные шаги делала в селе Баткат Шегарского района Томской области, где жила и проходила стажировку. Этот опыт научил меня ценить труд и понимать людей. С 2008 года я работала главным бухгалтером в нескольких компаниях, совмещая точность расчётов с умением управлять процессами.
+                </p>
+                <p className="font-sans text-lg md:text-xl leading-relaxed">
+                  В марте 2024 года я возглавила медиахолдинг RWH MEDIA —проект моего сына, который уже несколько лет проходит службу в зоне СВО.Для меня это не просто работа, а семейное дело и вклад в развитие честного медиа, отражающего реальные события и поддерживающего социально важные инициативы.
+                </p>
+                <p className="font-sans text-lg md:text-xl leading-relaxed">
+                  В жизни я стараюсь сохранять баланс между делами и личным счастьем. У меня крепкая семья: муж, сын, мама, верный пёс и несколько озорных котов. Я люблю животных, путешествия и вышивку крестиком —в этом нахожу душевное вдохновение.
+                </p>
+                <p className="font-sans text-lg md:text-xl leading-relaxed">
+                  Верю, что успех приходит к тем, кто идёт к нему с теплом в сердце и твёрдым шагом.
+                </p>
               </div>
             </div>
           </div>

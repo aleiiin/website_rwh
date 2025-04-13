@@ -10,7 +10,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="font-serif font-bold text-xl mb-2">Иванов Иван Иванович</h3>
+            <h3 className="font-sans-bold text-xl mb-2">Имя кандидата</h3>
             <p className="text-tertiary">Кандидат в депутаты городской думы г. Томск</p>
           </div>
           
@@ -19,7 +19,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <li>
                 <button 
                   onClick={() => scrollToSection("about")} 
-                  className="text-tertiary hover:text-white transition"
+                  className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-105"
                 >
                   О кандидате
                 </button>
@@ -27,7 +27,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <li>
                 <button 
                   onClick={() => scrollToSection("district")} 
-                  className="text-tertiary hover:text-white transition"
+                  className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-105"
                 >
                   Округ
                 </button>
@@ -35,7 +35,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <li>
                 <button 
                   onClick={() => scrollToSection("program")} 
-                  className="text-tertiary hover:text-white transition"
+                  className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-105"
                 >
                   Программа
                 </button>
@@ -43,7 +43,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <li>
                 <button 
                   onClick={() => scrollToSection("videos")} 
-                  className="text-tertiary hover:text-white transition"
+                  className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-105"
                 >
                   Видео
                 </button>
@@ -51,7 +51,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <li>
                 <button 
                   onClick={() => scrollToSection("party")} 
-                  className="text-tertiary hover:text-white transition"
+                  className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-105"
                 >
                   Партия
                 </button>
@@ -59,7 +59,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <li>
                 <button 
                   onClick={() => scrollToSection("contact")} 
-                  className="text-tertiary hover:text-white transition"
+                  className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-105"
                 >
                   Контакты
                 </button>
@@ -69,16 +69,16 @@ export default function Footer({ scrollToSection }: FooterProps) {
           
           <div className="text-center md:text-right">
             <div className="flex justify-center md:justify-end space-x-3 mb-2">
-              <a href="#" className="text-tertiary hover:text-white transition">
+              <a href="#" className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-110">
                 <FaVk className="h-5 w-5" />
               </a>
-              <a href="#" className="text-tertiary hover:text-white transition">
+              <a href="#" className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-110">
                 <FaTelegram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-tertiary hover:text-white transition">
+              <a href="#" className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-110">
                 <FaYoutube className="h-5 w-5" />
               </a>
-              <a href="#" className="text-tertiary hover:text-white transition">
+              <a href="#" className="text-tertiary hover:text-white transform transition-all duration-300 hover:scale-110">
                 <FaOdnoklassniki className="h-5 w-5" />
               </a>
             </div>

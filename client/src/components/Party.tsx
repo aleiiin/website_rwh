@@ -30,11 +30,11 @@ export default function Party() {
             </div>
             
             <div className="md:w-2/3 md:pl-12">
-              <h3 className="font-serif font-bold text-2xl text-secondary mb-4">
-                Единая Россия
+              <h3 className="font-sans-bold text-2xl text-secondary mb-4">
+                Название партии
               </h3>
               <p className="text-gray-700 mb-4">
-                Иванов Иван Иванович — кандидат от политической партии «Единая Россия». 
+                Имя кандидата — кандидат от политической партии «Название партии». 
                 Партия отстаивает традиционные ценности и поддерживает стратегический курс на 
                 укрепление суверенитета России, развитие экономики и социальной сферы.
               </p>
@@ -75,7 +75,7 @@ export default function Party() {
                   href="https://er.ru/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-primary hover:bg-secondary text-white flex items-center"
+                  className="bg-primary hover:bg-secondary text-white flex items-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   Официальный сайт партии
                   <ExternalLink className="ml-2 h-4 w-4" />

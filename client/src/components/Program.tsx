@@ -114,12 +114,10 @@ export default function Program({ scrollToSection }: ProgramProps) {
           </div>
           
           <div className="mt-12 text-center">
-            <Button 
-              onClick={() => scrollToSection("contact")} 
-              className="bg-primary hover:bg-secondary text-white"
-              size="lg"
+            <Button
+              className="mt-8 bg-primary hover:bg-secondary text-white transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
-              Поддержать программу
+              Подробнее о программе
             </Button>
           </div>
         </div>

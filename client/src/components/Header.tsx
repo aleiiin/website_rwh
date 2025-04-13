@@ -47,9 +47,9 @@ export default function Header({ scrollToSection }: HeaderProps) {
           {/* Logo/Name */}
           <button 
             onClick={() => handleNavClick("hero")} 
-            className="text-primary font-serif font-bold text-xl md:text-2xl"
+            className="font-sans-bold text-lg transform transition-all duration-300 hover:scale-105 hover:text-secondary"
           >
-            Иванов Иван Иванович
+            Имя кандидата
           </button>
           
           {/* Mobile Menu Button */}
@@ -66,37 +66,37 @@ export default function Header({ scrollToSection }: HeaderProps) {
           <div className="hidden md:flex space-x-6 items-center">
             <button 
               onClick={() => handleNavClick("about")} 
-              className={`nav-link ${activeSection === "about" ? "active" : ""}`}
+              className="text-gray-700 hover:text-primary transform transition-all duration-300 hover:scale-105"
             >
               О кандидате
             </button>
             <button 
               onClick={() => handleNavClick("district")} 
-              className={`nav-link ${activeSection === "district" ? "active" : ""}`}
+              className="text-gray-700 hover:text-primary transform transition-all duration-300 hover:scale-105"
             >
               Округ
             </button>
             <button 
               onClick={() => handleNavClick("program")} 
-              className={`nav-link ${activeSection === "program" ? "active" : ""}`}
+              className="text-gray-700 hover:text-primary transform transition-all duration-300 hover:scale-105"
             >
               Программа
             </button>
             <button 
               onClick={() => handleNavClick("videos")} 
-              className={`nav-link ${activeSection === "videos" ? "active" : ""}`}
+              className="text-gray-700 hover:text-primary transform transition-all duration-300 hover:scale-105"
             >
               Видео
             </button>
             <button 
               onClick={() => handleNavClick("party")} 
-              className={`nav-link ${activeSection === "party" ? "active" : ""}`}
+              className="text-gray-700 hover:text-primary transform transition-all duration-300 hover:scale-105"
             >
               Партия
             </button>
             <button 
               onClick={() => handleNavClick("contact")} 
-              className={`nav-link ${activeSection === "contact" ? "active" : ""}`}
+              className="text-gray-700 hover:text-primary transform transition-all duration-300 hover:scale-105"
             >
               Контакты
             </button>
