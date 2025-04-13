@@ -1,16 +1,10 @@
 import { FaVk, FaTelegram, FaYoutube, FaOdnoklassniki } from "react-icons/fa";
-import { FileDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
 }
 
 export default function Footer({ scrollToSection }: FooterProps) {
-  const handleExportPDF = () => {
-    window.open('/api/export-pdf', '_blank');
-  };
-
   return (
     <footer className="bg-primary text-white py-8">
       <div className="container mx-auto px-4">
@@ -74,7 +68,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
           </div>
           
           <div className="text-center md:text-right">
-            <div className="flex justify-center md:justify-end space-x-3 mb-4">
+            <div className="flex justify-center md:justify-end space-x-3 mb-2">
               <a href="#" className="text-tertiary hover:text-white transition">
                 <FaVk className="h-5 w-5" />
               </a>
@@ -87,17 +81,6 @@ export default function Footer({ scrollToSection }: FooterProps) {
               <a href="#" className="text-tertiary hover:text-white transition">
                 <FaOdnoklassniki className="h-5 w-5" />
               </a>
-            </div>
-            <div className="mb-3">
-              <Button 
-                onClick={handleExportPDF}
-                variant="secondary"
-                size="sm"
-                className="bg-tertiary hover:bg-white text-primary flex items-center gap-2"
-              >
-                <FileDown size={16} />
-                Экспорт в PDF
-              </Button>
             </div>
             <p className="text-sm text-tertiary">&copy; 2023 Все права защищены</p>
           </div>
