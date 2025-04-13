@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, FileDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
@@ -17,10 +17,6 @@ export default function Header({ scrollToSection }: HeaderProps) {
   const handleNavClick = (id: string) => {
     scrollToSection(id);
     setIsOpen(false);
-  };
-
-  const handleExportPDF = () => {
-    window.open('/api/export-pdf', '_blank');
   };
 
   useEffect(() => {
@@ -57,28 +53,17 @@ export default function Header({ scrollToSection }: HeaderProps) {
           </button>
           
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <Button
-              onClick={handleExportPDF}
-              variant="outline"
-              size="sm"
-              className="mr-2 border-primary text-primary"
-            >
-              <FileDown size={16} className="mr-1" />
-              PDF
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={toggleMenu} 
-              className="text-primary"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </Button>
-          </div>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={toggleMenu} 
+            className="md:hidden text-primary"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </Button>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-4 items-center">
+          <div className="hidden md:flex space-x-6 items-center">
             <button 
               onClick={() => handleNavClick("about")} 
               className={`nav-link ${activeSection === "about" ? "active" : ""}`}
@@ -120,14 +105,6 @@ export default function Header({ scrollToSection }: HeaderProps) {
               className="bg-primary hover:bg-secondary text-white"
             >
               Поддержать
-            </Button>
-            <Button
-              onClick={handleExportPDF}
-              variant="outline"
-              className="border-primary text-primary flex items-center"
-            >
-              <FileDown size={16} className="mr-2" />
-              Экспорт в PDF
             </Button>
           </div>
         </nav>
