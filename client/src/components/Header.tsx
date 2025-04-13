@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ExportToPpt from "./ExportToPpt";
 
 interface HeaderProps {
   scrollToSection: (id: string) => void;
@@ -107,7 +106,6 @@ export default function Header({ scrollToSection }: HeaderProps) {
             >
               Поддержать
             </Button>
-            <ExportToPpt />
           </div>
         </nav>
       </div>
@@ -158,9 +156,6 @@ export default function Header({ scrollToSection }: HeaderProps) {
             >
               Поддержать
             </Button>
-            <div className="mt-2">
-              <ExportToPpt />
-            </div>
           </div>
         </div>
       )}
