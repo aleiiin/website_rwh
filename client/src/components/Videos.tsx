@@ -1,121 +1,118 @@
-import { useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { useState } from "react";
+import { Play } from "lucide-react";
 
 interface VideoData {
   id: number;
   title: string;
-  date: string;
   description: string;
-  thumbnailUrl: string;
-  videoUrl: string;
+  thumbnailSrc: string;
 }
 
 export default function Videos() {
-  const [isVideoDialogOpen, setIsVideoDialogOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
+  const [activeVideo, setActiveVideo] = useState<VideoData>({
+    id: 0,
+    title: "Обращение к жителям Кировского района",
+    description: "В этом видео я рассказываю о ключевых проблемах нашего района и путях их решения.",
+    thumbnailSrc: "https://images.unsplash.com/photo-1551817958-d9d86fb29431?w=800&auto=format&fit=crop&q=80"
+  });
 
-  const videos: VideoData[] = [
+  const videoData: VideoData[] = [
     {
       id: 1,
-      title: "Встреча с жителями района Каштак",
-      date: "15 мая 2023",
-      description: "Обсуждение проблем благоустройства дворовых территорий и планов по ремонту детских площадок.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1"
+      title: "Встреча с избирателями",
+      description: "Отчет о встрече с жителями микрорайона Южный и обсуждение актуальных проблем района.",
+      thumbnailSrc: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80"
     },
     {
       id: 2,
-      title: "Интервью для местного телевидения",
-      date: "2 июня 2023",
-      description: "Рассказ о моей программе и планах по развитию округа, ответы на вопросы журналистов.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2"
+      title: "Благоустройство дворов",
+      description: "Подробная презентация программы по модернизации дворовых территорий Кировского района.",
+      thumbnailSrc: "https://images.unsplash.com/photo-1608501078713-8e445a709b39?w=800&auto=format&fit=crop&q=80"
     },
     {
       id: 3,
-      title: "Обращение к избирателям",
-      date: "20 июня 2023",
-      description: "Важное обращение к жителям округа с информацией о предстоящих выборах и призывом к активному участию.",
-      thumbnailUrl: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3"
+      title: "Интервью для местных СМИ",
+      description: "Ответы на актуальные вопросы о развитии города и планах работы в городской думе.",
+      thumbnailSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80"
     }
   ];
 
-  const openVideoDialog = (video: VideoData) => {
-    setSelectedVideo(video);
-    setIsVideoDialogOpen(true);
+  const handleVideoSelect = (video: VideoData) => {
+    setActiveVideo(video);
+    // Scroll to main video player
+    const videoElement = document.getElementById("main-video");
+    if (videoElement) {
+      videoElement.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
   };
 
   return (
-    <section id="videos" className="py-16">
+    <section id="videos" className="py-16 md:py-24 bg-tertiary bg-opacity-30">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary text-center mb-12">Видео о нашей работе</h2>
-        
-        <div className="section-card rounded-lg p-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {videos.map((video) => (
-              <div key={video.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="aspect-video bg-gray-200 relative">
-                  <div 
-                    className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                    onClick={() => openVideoDialog(video)}
-                  >
-                    <div className="bg-primary bg-opacity-80 rounded-full w-16 h-16 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <img 
-                    src={video.thumbnailUrl} 
-                    alt={video.title} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-heading font-bold text-lg text-primary mb-1">{video.title}</h3>
-                  <p className="text-gray-600 text-sm mb-2">Опубликовано: {video.date}</p>
-                  <p className="text-gray-700">{video.description}</p>
-                </div>
-              </div>
-            ))}
+        <div className="section-bg p-6 md:p-12">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Видеообращения кандидата</h2>
+            <div className="section-divider"></div>
+            <p className="text-gray-700 max-w-3xl mx-auto">
+              Познакомьтесь с моими выступлениями и узнайте больше о моей программе
+            </p>
           </div>
           
-          <div className="mt-8 text-center">
-            <a 
-              href="#" 
-              className="inline-flex items-center bg-[#c5cadb] hover:bg-opacity-80 text-primary font-accent font-bold py-2 px-4 rounded-md transition"
-            >
-              <span>Смотреть все видео</span>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
+          <div className="mb-12">
+            <div id="main-video" className="relative w-full pt-[56.25%] rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src={activeVideo.thumbnailSrc} 
+                alt={activeVideo.title} 
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-primary bg-opacity-30 flex items-center justify-center">
+                <div className="w-16 h-16 bg-primary bg-opacity-80 rounded-full flex items-center justify-center text-white cursor-pointer transition hover:bg-opacity-100">
+                  <Play size={30} fill="white" />
+                </div>
+              </div>
+            </div>
+            <h3 className="font-serif font-bold text-xl text-secondary mt-4">
+              {activeVideo.title}
+            </h3>
+            <p className="text-gray-600 mt-2">
+              {activeVideo.description}
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-serif font-bold text-2xl text-secondary mb-6">
+              Другие видео
+            </h3>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videoData.map((video) => (
+                <div 
+                  key={video.id} 
+                  className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-xl transition-shadow"
+                  onClick={() => handleVideoSelect(video)}
+                >
+                  <div className="relative">
+                    <img 
+                      src={video.thumbnailSrc} 
+                      alt={video.title} 
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-primary bg-opacity-30 flex items-center justify-center">
+                      <span className="w-12 h-12 bg-primary bg-opacity-80 rounded-full flex items-center justify-center text-white">
+                        <Play size={20} fill="white" />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-primary">{video.title}</h4>
+                    <p className="text-gray-600 text-sm mt-1">{video.description.substring(0, 60)}...</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Video Dialog */}
-      <Dialog open={isVideoDialogOpen} onOpenChange={setIsVideoDialogOpen}>
-        <DialogContent className="sm:max-w-[800px]">
-          {selectedVideo && (
-            <div className="p-2">
-              <h3 className="font-heading font-bold text-xl text-primary mb-4">{selectedVideo.title}</h3>
-              <div className="aspect-video w-full rounded-lg overflow-hidden bg-black mb-4">
-                <div className="w-full h-full flex items-center justify-center">
-                  {/* This is a placeholder for the actual video */}
-                  <div className="text-center p-4 text-white">
-                    {/* In a real implementation, this would be an iframe or video element */}
-                    <p>Здесь будет видео "{selectedVideo.title}"</p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-gray-700">{selectedVideo.description}</p>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }

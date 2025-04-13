@@ -1,39 +1,37 @@
-import { useEffect } from 'react';
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Program from '@/components/Program';
-import District from '@/components/District';
-import Videos from '@/components/Videos';
-import MapSection from '@/components/MapSection';
-import Party from '@/components/Party';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import { useRef } from "react";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import District from "@/components/District";
+import Program from "@/components/Program";
+import Videos from "@/components/Videos";
+import Party from "@/components/Party";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
-  // Scroll to anchor when page loads if URL contains hash
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: offsetTop - 80, // Adjust for header height
+        behavior: "smooth"
+      });
     }
-  }, []);
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <Hero />
+    <div className="min-h-screen">
+      <Header scrollToSection={scrollToSection} />
+      <Hero scrollToSection={scrollToSection} />
       <About />
-      <Program />
       <District />
+      <Program scrollToSection={scrollToSection} />
       <Videos />
-      <MapSection />
       <Party />
       <Contact />
-      <Footer />
+      <Footer scrollToSection={scrollToSection} />
     </div>
   );
 }

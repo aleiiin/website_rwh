@@ -1,56 +1,86 @@
+import { CheckCircle, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 export default function Party() {
   return (
-    <section className="py-16">
+    <section id="party" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary text-center mb-12">Политическая партия</h2>
-        
-        <div className="section-card rounded-lg p-6">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-full md:w-1/3 flex justify-center">
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <img 
-                  src="https://via.placeholder.com/200x200?text=Партия" 
-                  alt="Логотип партии" 
-                  className="w-48 h-48 object-contain mx-auto"
-                />
+        <div className="section-bg p-6 md:p-12">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Политическая партия</h2>
+            <div className="section-divider"></div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+              <div className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center w-full max-w-xs">
+                {/* Party logo */}
+                <div className="w-full h-48 bg-tertiary bg-opacity-50 rounded flex items-center justify-center">
+                  <svg 
+                    viewBox="0 0 100 100" 
+                    className="w-24 h-24 text-primary"
+                    fill="currentColor"
+                  >
+                    <path d="M50,10 L10,60 L90,60 Z" />
+                    <rect x="10" y="65" width="80" height="25" />
+                    <rect x="45" y="60" width="10" height="30" />
+                  </svg>
+                </div>
               </div>
             </div>
             
-            <div className="w-full md:w-2/3">
-              <h3 className="font-heading font-bold text-2xl text-primary mb-4">Партия "Единое будущее"</h3>
-              <p className="text-gray-700 mb-6">
-                Я горжусь тем, что представляю партию "Единое будущее" – политическую силу, которая последовательно выступает за развитие регионов, социальную справедливость и благополучие каждого гражданина России. Наша партия имеет четкую программу действий, направленную на улучшение качества жизни людей.
+            <div className="md:w-2/3 md:pl-12">
+              <h3 className="font-serif font-bold text-2xl text-secondary mb-4">
+                Единая Россия
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Иванов Иван Иванович — кандидат от политической партии «Единая Россия». 
+                Партия отстаивает традиционные ценности и поддерживает стратегический курс на 
+                укрепление суверенитета России, развитие экономики и социальной сферы.
               </p>
               
               <div className="mb-6">
-                <h4 className="font-heading font-bold text-lg text-[#273779] mb-3">Ключевые направления работы партии:</h4>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <p className="text-gray-700">Социальная поддержка населения</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <p className="text-gray-700">Развитие здравоохранения</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <p className="text-gray-700">Модернизация образования</p>
-                  </div>
-                  <div className="bg-white p-4 rounded-lg shadow-sm">
-                    <p className="text-gray-700">Экономическое развитие регионов</p>
-                  </div>
-                </div>
+                <h4 className="font-bold text-primary mb-2">Ключевые принципы партии:</h4>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">
+                      <CheckCircle size={18} />
+                    </span>
+                    <span>Стабильность и устойчивое развитие</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">
+                      <CheckCircle size={18} />
+                    </span>
+                    <span>Поддержка социально незащищенных слоев населения</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">
+                      <CheckCircle size={18} />
+                    </span>
+                    <span>Сохранение культурных и исторических ценностей</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2 mt-1">
+                      <CheckCircle size={18} />
+                    </span>
+                    <span>Укрепление государственности и суверенитета</span>
+                  </li>
+                </ul>
               </div>
               
-              <a 
-                href="https://example.com/party" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex items-center bg-[#273779] hover:bg-primary text-white font-accent font-bold py-2 px-4 rounded-md transition"
-              >
-                <span>Посетить сайт партии</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
+              <div className="flex">
+                <Button
+                  as="a"
+                  href="https://er.ru/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary hover:bg-secondary text-white flex items-center"
+                >
+                  Официальный сайт партии
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>

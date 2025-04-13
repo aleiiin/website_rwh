@@ -1,126 +1,114 @@
+import { MapPin, Users, Building, GraduationCap, AlertCircle } from "lucide-react";
+import Map from "./Map";
+
 export default function District() {
   return (
-    <section id="district" className="py-16 bg-primary bg-opacity-5">
+    <section id="district" className="py-16 md:py-24 bg-tertiary bg-opacity-30">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary text-center mb-12">Наш округ №5</h2>
-        
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="w-full lg:w-1/2">
-            <div className="section-card rounded-lg p-6 h-full">
-              <h3 className="font-heading font-bold text-2xl text-primary mb-4">О районе</h3>
-              <p className="text-gray-700 mb-4">
-                Избирательный округ №5 включает в себя микрорайоны Каштак и часть Октябрьского района города Томска. Это один из старейших и крупнейших районов города с богатой историей и культурным наследием.
-              </p>
-              
-              <div className="mb-6">
-                <h4 className="font-heading font-bold text-xl text-[#273779] mb-3">Особенности округа:</h4>
-                <ul className="text-gray-700 space-y-2">
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#273779] mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Население — более 45 000 человек</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#273779] mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>7 школ и 10 детских садов</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#273779] mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>3 поликлиники и 1 больница</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#273779] mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Парк "Заречный" и 3 сквера</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#273779] mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>Крупный торговый центр и множество предприятий</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="font-heading font-bold text-xl text-[#273779] mb-3">Ключевые проблемы:</h4>
-                <ul className="text-gray-700 space-y-2">
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <span>Изношенность инженерных коммуникаций</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <span>Недостаточное количество парковочных мест</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <span>Состояние дорог и тротуаров</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <span>Нехватка врачей в поликлиниках</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        <div className="section-bg p-6 md:p-12">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Избирательный округ</h2>
+            <div className="section-divider"></div>
+            <p className="text-gray-700 max-w-3xl mx-auto">
+              Информация о Кировском районе города Томск, где баллотируется кандидат
+            </p>
           </div>
           
-          <div className="w-full lg:w-1/2">
-            <div className="section-card rounded-lg p-6 h-full">
-              <div className="aspect-video overflow-hidden rounded-lg mb-6">
-                <img 
-                  src="https://images.unsplash.com/photo-1578124301759-b76d26ec9485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Вид на район Каштак" 
-                  className="w-full h-full object-cover"
-                />
+          <div className="flex flex-col lg:flex-row">
+            <div className="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+              <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                <h3 className="font-serif font-bold text-2xl text-secondary mb-4">
+                  Кировский район
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Кировский район — один из четырёх внутригородских районов города Томска. 
+                  Расположен в западной и юго-западной частях города.
+                </p>
+                
+                <div className="mb-6">
+                  <h4 className="font-bold text-primary mb-2">
+                    Основные характеристики района:
+                  </h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <MapPin size={16} />
+                      </span>
+                      <span>Площадь: 52 кв. км</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <Users size={16} />
+                      </span>
+                      <span>Население: более 145 000 человек</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <Building size={16} />
+                      </span>
+                      <span>
+                        Включает микрорайоны: Университетский, Южный, Мокрушинский, 
+                        Степановка, посёлок Апрель
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <GraduationCap size={16} />
+                      </span>
+                      <span>
+                        На территории района находятся 6 университетов, 15 школ, 22 детских сада
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="font-bold text-primary mb-2">
+                    Приоритетные проблемы района:
+                  </h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <AlertCircle size={16} />
+                      </span>
+                      <span>Модернизация инженерных коммуникаций</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <AlertCircle size={16} />
+                      </span>
+                      <span>Благоустройство дворовых территорий</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <AlertCircle size={16} />
+                      </span>
+                      <span>Ремонт внутриквартальных дорог</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2 mt-1">
+                        <AlertCircle size={16} />
+                      </span>
+                      <span>Развитие спортивной инфраструктуры</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              
-              <h3 className="font-heading font-bold text-2xl text-primary mb-4">Наши приоритеты</h3>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h4 className="font-heading font-bold text-lg text-[#273779] mb-2">Коммунальная сфера</h4>
-                  <p className="text-gray-700">Модернизация инженерных сетей и повышение качества услуг ЖКХ</p>
+            </div>
+            
+            <div className="lg:w-1/2">
+              <div className="bg-white rounded-lg shadow-md p-6 h-full">
+                <h3 className="font-serif font-bold text-2xl text-secondary mb-4">
+                  Карта округа
+                </h3>
+                <div className="relative w-full h-96 rounded-lg overflow-hidden">
+                  <Map />
                 </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h4 className="font-heading font-bold text-lg text-[#273779] mb-2">Благоустройство</h4>
-                  <p className="text-gray-700">Ремонт дворов, создание новых зелёных зон, детских площадок</p>
+                <div className="mt-4">
+                  <p className="text-gray-600 text-sm">
+                    Границы избирательного округа №3 выделены синим цветом.
+                  </p>
                 </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h4 className="font-heading font-bold text-lg text-[#273779] mb-2">Социальная сфера</h4>
-                  <p className="text-gray-700">Поддержка социально незащищенных слоев населения</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <h4 className="font-heading font-bold text-lg text-[#273779] mb-2">Образование</h4>
-                  <p className="text-gray-700">Модернизация школ и детских садов, создание кружков</p>
-                </div>
-              </div>
-              
-              <div className="mt-6">
-                <a 
-                  href="#contact" 
-                  className="inline-block bg-[#273779] hover:bg-primary text-white font-accent font-bold py-3 px-6 rounded-md transition"
-                >
-                  Присоединяйтесь к нашей команде!
-                </a>
               </div>
             </div>
           </div>
